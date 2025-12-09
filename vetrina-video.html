@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vetrina Apulian Dealer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#020815" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:'Space Grotesk',sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      padding:18px 14px 24px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      background:
+        radial-gradient(circle at top,#10324b 0%,#020815 45%,#000 100%);
+      color:#e9f7ff;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:520px;
+    }
+
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:14px;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 11px;
+      border-radius:999px;
+      border:1px solid rgba(0,240,255,.9);
+      background:radial-gradient(circle at top,#051628,#020910);
+      color:#e9f7ff;
+      text-decoration:none;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      box-shadow:0 0 12px rgba(0,230,255,.7);
+    }
+
+    .title-block{
+      text-align:right;
+      flex:1;
+    }
+
+    .title{
+      font-size:16px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:#8de5ff;
+    }
+
+    .subtitle{
+      font-size:11px;
+      letter-spacing:1px;
+      color:#7ca6c7;
+      text-transform:uppercase;
+      opacity:.9;
+    }
+
+    .grid{
+      margin-top:10px;
+      display:grid;
+      gap:14px;
+    }
+
+    @media (min-width:480px){
+      .grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
+    .card{
+      background:linear-gradient(180deg,#071626,#020813);
+      border-radius:16px;
+      border:1px solid rgba(0,220,255,.6);
+      box-shadow:
+        0 0 14px rgba(0,210,255,.7),
+        0 0 26px rgba(0,80,140,.7);
+      padding:10px 10px 12px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .thumb{
+      width:100%;
+      aspect-ratio:16/9;
+      border-radius:10px;
+      background:
+        linear-gradient(135deg,rgba(0,240,255,.35),rgba(0,120,255,.2)),
+        radial-gradient(circle at top left,#29f2ff,#0050ff);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .thumb::after{
+      content:"▶";
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:32px;
+      color:#ffffff;
+      text-shadow:0 0 18px rgba(0,0,0,.8);
+    }
+
+    .tag{
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:1.2px;
+      color:#9fe8ff;
+      opacity:.9;
+    }
+
+    .name{
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .cta{
+      margin-top:4px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      width:100%;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(0,240,255,.85);
+      background:radial-gradient(circle at top,#051628,#020910);
+      color:#e9f7ff;
+      text-decoration:none;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      box-shadow:0 0 12px rgba(0,230,255,.7);
+    }
+
+    .cta span.icon{
+      font-size:15px;
+    }
+
+    .note{
+      margin-top:14px;
+      font-size:11px;
+      color:#7ca6c7;
+      text-align:center;
+      opacity:.85;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="wrap">
+
+    <div class="top">
+      <!-- TORNA ALLA HOME -->
+      <a class="back" href="index.html">⏴ Home</a>
+
+      <div class="title-block">
+        <div class="title">Vetrina Video</div>
+        <div class="subtitle">Apulian Dealer • Showcase</div>
+      </div>
+    </div>
+
+    <section class="grid">
+
+      <!-- VIDEO 1 -->
+      <article class="card">
+        <div class="thumb"></div>
+        <div class="tag">Top Product</div>
+        <div class="name">Video Recensione #1</div>
+        <a class="cta" href="LINK_VIDEO_1">
+          <span class="icon">🎥</span>
+          <span>Guarda il video</span>
+        </a>
+      </article>
+
+      <!-- VIDEO 2 -->
+      <article class="card">
+        <div class="thumb"></div>
+        <div class="tag">Unboxing</div>
+        <div class="name">Video Recensione #2</div>
+        <a class="cta" href="LINK_VIDEO_2">
+          <span class="icon">🎥</span>
+          <span>Guarda il video</span>
+        </a>
+      </article>
+
+      <!-- VIDEO 3 -->
+      <article class="card">
+        <div class="thumb"></div>
+        <div class="tag">Feedback cliente</div>
+        <div class="name">Video Recensione #3</div>
+        <a class="cta" href="LINK_VIDEO_3">
+          <span class="icon">🎥</span>
+          <span>Guarda il video</span>
+        </a>
+      </article>
+
+      <!-- VIDEO 4 -->
+      <article class="card">
+        <div class="thumb"></div>
+        <div class="tag">Promo</div>
+        <div class="name">Video Offerta Speciale</div>
+        <a class="cta" href="LINK_VIDEO_4">
+          <span class="icon">🎥</span>
+          <span>Guarda il video</span>
+        </a>
+      </article>
+
+    </section>
+
+    <div class="note">
+      Per inserire nuovi video modifica i link <strong>LINK_VIDEO_1 / 2 / 3 / 4</strong>
+      con i tuoi link di Telegram, Viber, Potato o altro.
+    </div>
+
+  </main>
+
+</body>
+</html>
