@@ -2,100 +2,172 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>BPFAM — Apulian Dealer</title>
+  <title>Apulian Dealer — Official</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0b0b0b">
+  <meta name="theme-color" content="#050914">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet">
 
   <style>
-    *{box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',sans-serif}
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:'Montserrat',sans-serif;
+    }
+
     body{
-      background:radial-gradient(circle at top,#111,#000 70%);
-      color:#fff;
       min-height:100vh;
+      padding:20px;
       display:flex;
       justify-content:center;
       align-items:center;
-      padding:20px;
+      background:
+        radial-gradient(circle at top,#0c233a 0,#050914 45%,#000 100%);
+      color:#e8f5ff;
     }
+
     .card{
       width:100%;
-      max-width:420px;
-      background:linear-gradient(180deg,#0e0e0e,#040404);
-      border:1px solid #2a2a2a;
+      max-width:430px;
+      background:linear-gradient(180deg,#06192b,#020713);
       border-radius:22px;
-      box-shadow:0 0 40px rgba(255,180,0,.15);
-      padding:30px 20px;
+      border:1px solid rgba(0,190,255,.45);
+      box-shadow:
+        0 0 25px rgba(0,190,255,.35),
+        0 0 60px rgba(0,40,80,.8);
+      padding:28px 20px 24px;
       text-align:center;
     }
+
     .logo{
-      font-size:34px;
-      font-weight:900;
-      letter-spacing:2px;
-      color:#ffb300;
-      text-shadow:0 0 20px rgba(255,179,0,.4);
+      max-width:260px;
+      margin:0 auto 8px;
+      filter:
+        drop-shadow(0 0 18px rgba(0,220,255,.7))
+        drop-shadow(0 0 30px rgba(0,120,255,.6));
     }
+
     .subtitle{
-      margin-top:8px;
+      margin-top:4px;
       font-size:13px;
       letter-spacing:2px;
-      color:#aaa;
+      color:#8bd6ff;
+      text-transform:uppercase;
     }
+
     .divider{
       height:1px;
-      background:linear-gradient(90deg,transparent,#ffb300,transparent);
-      margin:22px 0;
+      background:linear-gradient(90deg,transparent,#00e0ff,transparent);
+      margin:20px 0;
+      opacity:.8;
     }
+
     .btn{
-      display:block;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
       width:100%;
       padding:16px;
-      margin:12px 0;
-      border-radius:14px;
-      color:#000;
-      font-weight:700;
-      letter-spacing:1px;
+      margin:10px 0;
+      border-radius:16px;
+      color:#02101c;
+      font-weight:800;
+      letter-spacing:.5px;
       text-decoration:none;
-      background:linear-gradient(135deg,#ffb300,#ffd56a);
-      box-shadow:0 0 18px rgba(255,179,0,.35);
-      transition:.2s;
+      text-transform:uppercase;
+      background:linear-gradient(135deg,#00eaff,#0094ff);
+      box-shadow:
+        0 0 12px rgba(0,180,255,.6),
+        0 0 26px rgba(0,120,255,.5),
+        inset 0 0 10px rgba(255,255,255,.15);
+      border:1px solid rgba(0,220,255,.8);
+      transition:.23s ease;
+      font-size:13px;
     }
-    .btn:hover{transform:scale(1.04)}
+
+    .btn:hover{
+      transform:scale(1.05) translateY(-1px);
+      box-shadow:
+        0 0 20px rgba(0,220,255,.9),
+        0 0 40px rgba(0,120,255,.75),
+        inset 0 0 16px rgba(255,255,255,.25);
+    }
+
+    .btn span.emoji{
+      font-size:18px;
+    }
+
     .outline{
       background:transparent;
-      color:#ffb300;
-      border:1px solid #ffb300;
-      box-shadow:none;
+      color:#00e5ff;
+      border:1.5px solid #00e5ff;
+      box-shadow:0 0 14px rgba(0,200,255,.55);
     }
+
+    .outline:hover{
+      background:radial-gradient(circle at top,#052033,#020813);
+    }
+
     .footer{
-      margin-top:26px;
+      margin-top:22px;
       font-size:11px;
-      color:#666;
-      letter-spacing:1px;
+      color:#7ca6c7;
+      letter-spacing:.8px;
+      text-transform:uppercase;
     }
   </style>
 </head>
 <body>
 
   <div class="card">
-    <div class="logo">BPFAM</div>
-    <div class="subtitle">APULIAN DEALER • OFFICIAL</div>
+
+    <!-- LOGO GRAFFITI -->
+    <img
+      src="LOGO_URL_APULIAN_DEALER"
+      alt="Apulian Dealer Logo"
+      class="logo">
+
+    <div class="subtitle">Apulian Dealer • Street Style</div>
 
     <div class="divider"></div>
 
-    <a class="btn" href="https://t.me/bpfam">💬 CONTATTO TELEGRAM</a>
-    <a class="btn" href="https://t.me/bpfam2bot">🤖 BOT UFFICIALE</a>
-    <a class="btn" href="https://t.me/+CIA2nWh5thE2ZWFk">📣 CANALE TELEGRAM</a>
+    <!-- CONTATTI PRINCIPALI -->
+    <a class="btn" href="https://t.me/Apuliandealer2026">
+      <span class="emoji">💬</span> <span>Contatto Telegram</span>
+    </a>
 
-    <a class="btn outline" href="https://www.instagram.com/bpfamofficial420">📸 INSTAGRAM</a>
+    <a class="btn" href="https://signal.me/#eu/0tTWbTYK4YlvWUNa81UZOPOCLMmuGZNIfpRnyfbxeReprIswqGFD5aokxjL3rJ1k">
+      <span class="emoji">🔐</span> <span>Contatto Signal</span>
+    </a>
+
+    <a class="btn" href="https://m.dympt.org/joinchat/fcB7D58JSsw2ur27fuDGog">
+      <span class="emoji">📡</span> <span>Canale Potato</span>
+    </a>
+
+    <a class="btn" href="https://invite.viber.com/?g2=AQB4aNxoJW26pFTKN%2FmC7plbXJ%2F4UFoCR3BBAw%2F4AWR0l3qK3bN1v6Zuo26I4xqW">
+      <span class="emoji">📲</span> <span>Canale Viber</span>
+    </a>
+
+    <a class="btn" href="https://t.me/+FCmUTu7nmipmZWJk">
+      <span class="emoji">🛍️</span> <span>Vetrina Viber</span>
+    </a>
+
+    <a class="btn outline" href="https://www.instagram.com/apuliandealer2025">
+      <span class="emoji">📸</span> <span>Instagram Ufficiale</span>
+    </a>
 
     <div class="divider"></div>
 
-    <a class="btn" href="#">🔥 OFFERTE ATTIVE</a>
+    <!-- VETRINA VIDEO -->
+    <a class="btn" href="vetrina-video.html">
+      <span class="emoji">🎥</span> <span>Vetrina Apulian Dealer</span>
+    </a>
 
     <div class="footer">
-      © BPFAM • Apulian Dealer Style • Qualità sopra tutto
+      © Apulian Dealer • Neon Graffiti • Qualità sopra tutto
     </div>
+
   </div>
 
 </body>
