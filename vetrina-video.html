@@ -10,7 +10,7 @@
     --neon:#00eaff;
     --bg1:#020815;
     --bg2:#000;
-    --gap:12px;
+    --gap:10px;
   }
 
   *{ box-sizing:border-box; margin:0; padding:0; font-family:system-ui, Arial, sans-serif; }
@@ -38,7 +38,7 @@
   .left{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
     min-width:0;
   }
 
@@ -52,11 +52,12 @@
     box-shadow:0 0 12px rgba(0,234,255,.7);
   }
 
+  /* LOGO GRANDE */
   .logo{
-    height:34px;
+    height:64px;
     filter:
-      drop-shadow(0 0 10px rgba(0,220,255,.8))
-      drop-shadow(0 0 18px rgba(0,120,255,.6));
+      drop-shadow(0 0 14px rgba(0,220,255,.95))
+      drop-shadow(0 0 28px rgba(0,120,255,.8));
   }
 
   .title{
@@ -74,13 +75,13 @@
 
   .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
-    gap:var(--gap);
+    grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
+    gap:10px;
   }
 
   .card{
-    padding:10px;
-    border-radius:14px;
+    padding:8px;
+    border-radius:12px;
     background:#020202;
     border:1px solid rgba(0,234,255,.3);
     box-shadow:
@@ -95,11 +96,12 @@
     box-shadow:0 0 32px rgba(0,234,255,.6);
   }
 
+  /* VIDEO PIÙ PICCOLO */
   video{
     width:100%;
-    aspect-ratio:9/16;
+    aspect-ratio:3/4;
     object-fit:cover;
-    border-radius:12px;
+    border-radius:10px;
     background:#000;
   }
 
