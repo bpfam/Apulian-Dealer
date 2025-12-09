@@ -4,163 +4,180 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Apulian Dealer — Vetrina Video</title>
+
 <style>
-  :root { --neon:#00eaff; --gap:12px; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:#000; color:#e9feff; font-family:system-ui, Arial, sans-serif; }
+  :root{
+    --neon:#00eaff;
+    --bg1:#020815;
+    --bg2:#000;
+    --gap:12px;
+  }
 
+  *{ box-sizing:border-box; margin:0; padding:0; font-family:system-ui, Arial, sans-serif; }
+
+  body{
+    min-height:100vh;
+    background:radial-gradient(circle at top,#10324b 0%,#020815 45%,#000 100%);
+    color:#e9f7ff;
+  }
+
+  /* HEADER */
   header{
-    position:sticky; top:0; z-index:10;
-    display:flex; align-items:center; gap:10px; justify-content:space-between;
-    padding:12px; background:radial-gradient(circle at center, #030b0c 40%, #000 100%);
-    border-bottom:1px solid rgba(0,234,255,.18);
+    position:sticky;
+    top:0;
+    z-index:10;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:12px 14px;
+    background:linear-gradient(180deg,#051628,#020910);
+    border-bottom:1px solid rgba(0,234,255,.25);
   }
-  .left{ display:flex; gap:10px; align-items:center; min-width:0; }
-  .back{
-    text-decoration:none; padding:.5rem .9rem; border:1px solid var(--neon); border-radius:999px;
-    color:var(--neon); box-shadow:0 0 12px var(--neon); transition:all .2s ease; white-space:nowrap;
-  }
-  .back:hover{ background:var(--neon); color:#000; }
-  .title{
-    margin:0; font-size:1rem; line-height:1; display:flex; align-items:center; gap:8px;
-    color:var(--neon); text-shadow:0 0 10px var(--neon), 0 0 30px var(--neon);
-    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-    animation: glow 2s infinite alternate;
-  }
-  @keyframes glow { from { text-shadow:0 0 10px var(--neon) } to { text-shadow:0 0 25px var(--neon) } }
 
+  .left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
+  }
+
+  .back{
+    text-decoration:none;
+    padding:.45rem .9rem;
+    border:1px solid var(--neon);
+    border-radius:999px;
+    color:var(--neon);
+    font-size:12px;
+    box-shadow:0 0 12px rgba(0,234,255,.7);
+  }
+
+  .logo{
+    height:34px;
+    filter:
+      drop-shadow(0 0 10px rgba(0,220,255,.8))
+      drop-shadow(0 0 18px rgba(0,120,255,.6));
+  }
+
+  .title{
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#9fe8ff;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  /* GRID */
   .wrap{ max-width:1200px; margin:0 auto; padding:16px; }
-  .grid{ display:grid; gap:var(--gap); }
-  .grid[data-cols="4"]{ grid-template-columns:repeat(4,1fr); }
-  .grid[data-cols="3"]{ grid-template-columns:repeat(3,1fr); }
-  .grid[data-cols="2"]{ grid-template-columns:repeat(2,1fr); }
-  .grid[data-cols="1"]{ grid-template-columns:repeat(1,1fr); }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+    gap:var(--gap);
+  }
 
   .card{
-    padding:10px; border-radius:14px; background:#020202; border:1px solid rgba(0,234,255,.2);
-    box-shadow:0 0 0 1px rgba(0,234,255,.25) inset, 0 0 22px rgba(0,234,255,.25), 0 0 44px rgba(0,234,255,.15);
+    padding:10px;
+    border-radius:14px;
+    background:#020202;
+    border:1px solid rgba(0,234,255,.3);
+    box-shadow:
+      0 0 0 1px rgba(0,234,255,.15) inset,
+      0 0 20px rgba(0,234,255,.35),
+      0 0 40px rgba(0,120,255,.25);
     transition:transform .15s ease, box-shadow .15s ease;
   }
-  .card:hover{ transform:scale(1.03); box-shadow:0 0 28px rgba(0,234,255,.45); }
+
+  .card:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 32px rgba(0,234,255,.6);
+  }
 
   video{
-    width:100%; aspect-ratio:9/16; object-fit:cover; display:block; border-radius:12px; background:#000;
+    width:100%;
+    aspect-ratio:9/16;
+    object-fit:cover;
+    border-radius:12px;
+    background:#000;
   }
-  .name{ margin:.45rem 0 0; text-align:center; font-size:.7rem; color:#9af6ff; word-break:break-word; }
 
-  .empty{ color:#9af6ff; text-align:center; padding:40px 12px; }
-  footer{ text-align:center; color:#9af6ff; opacity:.8; padding:26px 12px; }
+  .name{
+    margin-top:6px;
+    text-align:center;
+    font-size:11px;
+    color:#9af6ff;
+    word-break:break-word;
+    opacity:.9;
+  }
 
-  /* FAB 1-2-3-4 */
-  .fab{ position:fixed; right:14px; bottom:18px; z-index:20; display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
-  .fab-toggle{
-    width:52px; height:52px; border-radius:50%; border:1px solid var(--neon); background:#000; color:var(--neon);
-    box-shadow:0 0 12px var(--neon), inset 0 0 10px rgba(0,234,255,.2);
-    font-size:1.2rem; cursor:pointer; transition:transform .15s ease, box-shadow .2s ease;
+  .empty{
+    color:#9af6ff;
+    text-align:center;
+    padding:50px 14px;
+    font-size:13px;
   }
-  .fab-toggle:hover{ transform:scale(1.05); box-shadow:0 0 18px var(--neon); }
-  .fab-menu{
-    display:none; flex-direction:column; gap:6px; padding:8px;
-    background:#020202; border:1px solid rgba(0,234,255,.25); border-radius:12px;
-    box-shadow:0 0 24px rgba(0,234,255,.35);
+
+  footer{
+    text-align:center;
+    color:#9af6ff;
+    opacity:.75;
+    padding:26px 12px;
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
   }
-  .fab.open .fab-menu{ display:flex; }
-  .fab-btn{
-    min-width:44px; padding:.35rem .65rem; border-radius:999px; cursor:pointer;
-    background:transparent; color:var(--neon); border:1px solid var(--neon); font-weight:700;
-    box-shadow:0 0 8px var(--neon);
-  }
-  .fab-btn.active{ background:var(--neon); color:#000; }
 </style>
 </head>
+
 <body>
-  <header>
-    <div class="left">
-      <a class="back" href="index.html">⬅️ Torna al menù</a>
-      <h1 class="title">🎥 APULIAN DEALER — VETRINA VIDEO</h1>
-    </div>
-  </header>
 
-  <div class="wrap">
-    <div id="grid" class="grid" data-cols="2"></div>
-    <div id="empty" class="empty" style="display:none">Nessun video trovato.</div>
+<header>
+  <div class="left">
+    <a class="back" href="index.html">⬅️ Home</a>
+    <img class="logo" src="https://i.postimg.cc/xjMg9PY5/IMG-0063.jpg" alt="Apulian Dealer">
+    <div class="title">Vetrina Video</div>
   </div>
+</header>
 
-  <footer>💎 Apulian Dealer — Street Style, Qualità e Rispetto</footer>
+<div class="wrap">
+  <div id="grid" class="grid"></div>
+  <div id="empty" class="empty" style="display:none;">Nessun video trovato.</div>
+</div>
 
-  <!-- FAB: controllo vista -->
-  <div class="fab" id="fab">
-    <div class="fab-menu" id="fabMenu" aria-label="Numero colonne">
-      <button class="fab-btn" data-c="1">1</button>
-      <button class="fab-btn" data-c="2">2</button>
-      <button class="fab-btn" data-c="3">3</button>
-      <button class="fab-btn" data-c="4">4</button>
-    </div>
-    <button class="fab-toggle" id="fabToggle" aria-label="Vista">⧉</button>
-  </div>
+<footer>
+  © Apulian Dealer • Neon Street • Qualità sopra tutto
+</footer>
 
 <script>
 (async () => {
-  // CONFIGURAZIONE REPO APULIAN DEALER
   const owner = "bpfam";
   const repo  = "Apulian-Dealer";
-  const path  = "videos"; // cartella dove carichi i video
+  const path  = "videos";
   const api   = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
 
   const grid = document.getElementById("grid");
-  const saved = localStorage.getItem("apulian_cols") || "2";
-  grid.setAttribute("data-cols", saved);
+  const empty = document.getElementById("empty");
 
-  const fab = document.getElementById("fab");
-  const toggle = document.getElementById("fabToggle");
-  const menu = document.getElementById("fabMenu");
-  const btns = menu.querySelectorAll(".fab-btn");
-
-  function setActive(c){
-    grid.setAttribute("data-cols", c);
-    localStorage.setItem("apulian_cols", c);
-    btns.forEach(b => b.classList.toggle("active", b.dataset.c === c));
-  }
-  setActive(saved);
-  toggle.addEventListener("click", ()=> fab.classList.toggle("open"));
-  document.addEventListener("click", (e)=>{ if(!fab.contains(e.target)) fab.classList.remove("open"); });
-  btns.forEach(b=> b.addEventListener("click", ()=>{ setActive(b.dataset.c); fab.classList.remove("open"); }));
-
-  // --- Riconoscimento automatico dei video ---
   const VIDEO_RE = /\.(mp4|mov|m4v|webm|mkv|avi)$/i;
-
-  function guessMime(name){
-    const ext = (name.split('.').pop() || '').toLowerCase();
-    return ({
-      mp4:'video/mp4',
-      mov:'video/quicktime',
-      m4v:'video/x-m4v',
-      webm:'video/webm',
-      mkv:'video/x-matroska',
-      avi:'video/x-msvideo'
-    })[ext] || 'video/mp4';
-  }
 
   try{
     const res = await fetch(api, { headers:{ "Accept":"application/vnd.github+json" }});
     const data = await res.json();
 
     const files = (Array.isArray(data)?data:[])
-      .filter(f =>
-        f.type === "file" &&
-        !/^(index\.html|readme\.txt|readme\.md)$/i.test(f.name)
-      )
+      .filter(f => f.type === "file" && VIDEO_RE.test(f.name))
       .sort((a,b)=> a.name.localeCompare(b.name));
 
     if(!files.length){
-      document.getElementById("empty").style.display = "block";
+      empty.style.display = "block";
       return;
     }
 
     for (const f of files) {
       const encoded = encodeURIComponent(f.name);
       const src = `videos/${encoded}`;
-      const mime = guessMime(f.name);
 
       const card = document.createElement('div');
       card.className = 'card';
@@ -169,23 +186,7 @@
       v.controls = true;
       v.playsInline = true;
       v.preload = "metadata";
-
-      const s = document.createElement('source');
-      s.src = src;
-      s.type = mime;
-      v.appendChild(s);
-
-      // se estensione nota ma non supportata, salta
-      if (VIDEO_RE.test(f.name) && v.canPlayType(mime) === "") {
-        continue;
-      }
-
-      v.addEventListener('error', () => {
-        card.remove();
-        if (!grid.children.length){
-          document.getElementById("empty").style.display = "block";
-        }
-      });
+      v.src = src;
 
       const name = document.createElement('div');
       name.className = 'name';
@@ -195,13 +196,14 @@
       card.appendChild(name);
       grid.appendChild(card);
     }
+
   }catch(e){
     console.error(e);
-    const empty = document.getElementById("empty");
     empty.style.display = "block";
     empty.textContent = "Errore nel caricare i file.";
   }
 })();
 </script>
+
 </body>
 </html>
